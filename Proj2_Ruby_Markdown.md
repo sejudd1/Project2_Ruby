@@ -21,7 +21,7 @@
 
 
 ##SongHub ERD
-![](file://localhost/Users/stevejuddjr/GA/W06/Project2_Ruby/images/Untitled%20drawing%20(1).jpg "SongHub ERD")
+![](images/Untitled%20drawing%20(1).jpg "SongHub ERD")
 
 ####SongHub Relational Types
 #####Songwriter
@@ -53,13 +53,13 @@
 
 ####Site Design (rough draft)
 *Main Page
-![](file://localhost/Users/stevejuddjr/GA/W06/Project2_Ruby/images/Main.jpg)
+![](images/Main.jpg)
 
 *Songwriter Page
-![](file://localhost/Users/stevejuddjr/GA/W06/Project2_Ruby/images/Songwriter.jpg)
+![](images/Songwriter.jpg)
 
 *Songs Page
-![](file://localhost/Users/stevejuddjr/GA/W06/Project2_Ruby/images/Songs.jpg)
+![](images/Songs.jpg)
 
 *Genre Page
-![](file://localhost/Users/stevejuddjr/GA/W06/Project2_Ruby/images/Genre.jpg)
+![](images/Genre.jpg)
