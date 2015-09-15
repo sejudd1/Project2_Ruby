@@ -1,0 +1,10 @@
+<h1>SongBook Songs</h1>
+
+<ul>
+	<% @songs.each do |song| %>
+	<li>
+		<%= song.name %> | <%= song.writer %> | <%= song.genre %> | <%=song.file %> | <%=song.like %>
+	</li>
+
+	<% end %>
+</ul>

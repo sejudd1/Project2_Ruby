@@ -1,0 +1,21 @@
+<h1> <%= @song.name %> </h1>
+
+<ul>
+	<li>
+		<%= song.writer %> link to user id page
+	</li>
+	<li>
+		<%= song.genre %> 
+	</li>
+	<li>
+		<%=song.file %>
+	</li>
+	<li>
+		<%=song.like %>
+	</li>
+
+	
+
+</ul>
+
+<%= link_to "Back to the Library", songs_path %>

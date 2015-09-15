@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+songs = Song.create([
+	{ name: 'Test of Love', writer: "John Doe", genre: "R&B", file: "url link", like: " ", post: "Catchy song, nice hooks in the Chorus, flip the chorus around and make that a bridge"}, 
+	{ name: 'Dance Machine', writer: "Test Test", genre: "Pop", file: "url link", like: " ", post: "Catchy song, nice hooks in the Chorus, great groove"}
+	])
