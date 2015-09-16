@@ -1,2 +1,89 @@
-<h1>Welcome to Your Profile <%= @user.name %></h1>
+<h1>Welcome To Your SongBook Profile, <%= @user.name %></h1>
+
+
+<p>You have x amount of comments</p>
+<p>You have x amount of likes</p>
+
+<h2>Your Song List</h2>
+<table>
+	<% @user.songs.each do |song| %>
+	<%# raise song.inspect %>
+		<tr>
+			<th>Song Name</th>
+			<th>Songwriter</th>
+			<th>Genre</th>
+			<th>Song URL</th>
+			<th>Edit</th>
+			<th>Delete</th>
+		</tr>
+		<tr>
+			<td><%= link_to song.name, song_path(song) %></td>
+			<td><%= link_to song.writer, user_path(song.user_id) %></td>  
+			<td><%= song.genre %></td>
+			<td>
+				<audio src>
+					<%= song.file %>
+				</audio>
+			</td>  
+			<%#= "Number of comments" #post.comments.count %> 
+			<td><%= link_to "Edit Song", edit_song_path(song) %></td>
+			<td><%= link_to "Delete Song", user_song_path(current_user , song), method: :delete, data: { confirm: "Are you sure you want to delete your song?"} %></td>
+
+		</tr>
+	<% end %>
+</table>
+
+<div>
+	
+	<h2> Upload A New Song </h2>
+
+	<%= form_for [@user, Song.new] do |f| %>
+
+		<div>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</div>
+		
+		<div>
+			<%= f.label :writer %>
+			<%= f.text_field :writer %>
+		</div>
+
+		<div>
+			<%= f.label :genre %>
+			<!-- <br>
+			<form>
+			 	<input type="radio" name="genre" value="rock">Rock<br>
+                <input type="radio" name="genre" value="pop">Pop<br>
+                <input type="radio" name="genre" value="r&amp;b">R&amp;B<br>
+                <input type="radio" name="genre" value="edm">EDM<br>
+                <input type="radio" name="genre" value="country">County<br>
+                <input type="radio" name="genre" value="jazz">Jazz
+            </form> -->
+			<select>
+	  			<option value="rock">Rock</option>
+	  			<option value="pop">Pop</option>
+	  			<option value="r&amp;b">R&amp;B</option>
+	  			<option value="edm">EDM</option>
+	  			<option value="edm">Country</option>
+	  			<option value="edm">Jazz</option>
+			</select>
+		</div>
+
+		<div>
+			<%= f.label :file %>
+			<%= f.text_field :file %>
+		</div>
+
+		<div>
+			<%= f.submit "Save Song" %>
+		</div>
+	<% end %>
+	
+
+</div>
+
+<%= link_to "Back to the Library", songs_path %>
+<!-- user_songs_path(:user_id) -->
+
 

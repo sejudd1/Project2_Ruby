@@ -1,10 +1,22 @@
-<h1>SongBook Songs</h1>
+<h1>SongBook Library</h1>
 
-<ul>
+<table>
 	<% @songs.each do |song| %>
-	<li>
-		<%= song.name %> | <%= song.writer %> | <%= song.genre %> | <%=song.file %> | <%=song.like %>
-	</li>
+	<%# raise song.inspect %>
+		<tr>
+			<th>Song Name</th>
+			<th>Songwriter</th>
+			<th>Genre</th>
+			<th>Song URL</th>
+		</tr>
+		<tr>
+			<td><%= link_to song.name , songs_path(song) %></tc> 
+			<td><%= link_to song.writer , user_path(song) %></td> 
+			<td><%= song.genre %></td>
+			<td> <%=song.file %></td> 
+			<!-- <td><%#= post.comments.count %></td> -->
+		</tr>
 
 	<% end %>
-</ul>
+</table>
+<br>

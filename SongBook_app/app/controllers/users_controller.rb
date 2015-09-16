@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+	include SessionsHelper
 	def index
 		@users = User.all
 	end
@@ -9,7 +9,12 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:id])
+		if current_user	
+			@user = current_user
+		else
+			redirect_to login_path
+		end
+		
 	end
 
 	def create
@@ -29,3 +34,5 @@ class UsersController < ApplicationController
 	end
 
 end
+
+

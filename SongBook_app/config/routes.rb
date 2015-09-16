@@ -4,17 +4,38 @@ Rails.application.routes.draw do
   get "users/new" => "users#new"
   post "users" => "users#create"
   get "users/:id" => "users#show", as: :user 
+  
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   delete "/logout" => "sessions#destroy"
 
-  get "songs/" => "songs#index"
+  get "songs/" => "songs#index", as: :songs
   get "songs/new" => "songs#new", as: :new_song
-  get "songs/:id" => "songs#show", as: :song 
+  post "songs" => "songs#create"
+  get "songs/:id" => "songs#show", as: :song
+  get "songs/:id/edit" => "songs#edit", as: :edit_song 
+  patch "songs/:id" => "songs#update"
+  delete "songs/:id" => "songs#destroy"
 
+  get "comments/new" => "comments#new", as: :new_comment
+  post "comments" => "comments#create"
+  get "comments/:id" => "comments#show", as: :comment
+  get "users/:user_id/songs/:song_id/comments" => "comments#index"
+  post "users/:user_id/songs/:song_id/comments" => "comments#create"
+  get "users/:user_id/songs/:song_id/comments/new" => "comments#new"
+  get "users/:user_id/songs/:song_id/comments/:id/edit" => "comments#edit", as: :edit_comment
+  patch "users/:user_id/songs/:song_id/comments/:id" => "comments#update"
+  put "users/:user_id/songs/:song_id/comments/:id" => "comments#update"
+ 
 
+  # delete "/comments" => "comments#destroy"
 
-
+  resources :users do 
+    resources :songs do
+      resources :comments
+    end
+  end
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,43 @@
+<h1>Edit Your Song</h1>
+
+<%= form_for @song do |f| %>
+
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+
+    <div>
+        <%= f.label :writer %>
+        <%= f.text_field :writer %>
+    </div>
+
+    <div>
+        <%= f.label :genre %>
+            <select>
+                <!-- <form action="">
+                <input type="radio" name="genre" value="rock">Rock<br>
+                <input type="radio" name="genre" value="pop">Pop<br>
+                <input type="radio" name="genre" value="r&amp;b">R&amp;B<br>
+                <input type="radio" name="genre" value="edm">EDM<br>
+                <input type="radio" name="genre" value="country">County<br>
+                <input type="radio" name="genre" value="jazz">Jazz -->
+                <option value="rock">Rock</option>
+                <option value="pop">Pop</option>
+                <option value="r&amp;b">R&amp;B</option>
+                <option value="edm">EDM</option>
+                <option value="edm">Country</option>
+                <option value="edm">Jazz</option>
+            </select>
+    </div>
+
+    <div>
+        <%= f.label :file %>
+        <%= f.text_field :file %>
+    </div>
+
+    <%= f.submit "Submit Your Changes" %>
+
+<% end %>
+
+<%= link_to "Back to Library", songs_path %>
