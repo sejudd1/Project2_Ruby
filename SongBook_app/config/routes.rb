@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get "users/:user_id/songs/:song_id/comments/:id/edit" => "comments#edit", as: :edit_comment
   patch "users/:user_id/songs/:song_id/comments/:id" => "comments#update"
   put "users/:user_id/songs/:song_id/comments/:id" => "comments#update"
+  delete "users/:user_id/comments" => "comments#destroy"
  
 
   # delete "/comments" => "comments#destroy"

@@ -17,6 +17,12 @@ class CommentsController < ApplicationController
 		@comment = @post.comments.count(params[:comment])
 	end
 
+	def destroy
+		@comment = Comment.find(params[:id])
+		@comment.destroy
+		redirect_to songs_path
+	end
+
 
 	private
 

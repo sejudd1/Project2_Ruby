@@ -10,9 +10,10 @@ class UsersController < ApplicationController
 
 	def show
 		if current_user	
-			@user = current_user
+			@user = User.find(params[:id])
 		else
 			redirect_to login_path
+		
 		end
 		
 	end
@@ -32,6 +33,8 @@ class UsersController < ApplicationController
 	def user_params
 		params.require(:user).permit(:name, :email, :password, :password_confirmation)
 	end
+
+
 
 end
 

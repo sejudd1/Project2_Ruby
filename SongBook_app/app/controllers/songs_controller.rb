@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-
+	include SessionsHelper
 	def index
 		@songs = Song.all
 	end
@@ -10,8 +10,13 @@ class SongsController < ApplicationController
 	end
 
 	def show
-		@song = Song.find(params[:id])
-		# @user = User.find(params[:user_id])
+		
+		if current_user	
+			@song = Song.find(params[:id])
+		else
+			redirect_to login_path
+		
+		end
 	end
 
 	def create

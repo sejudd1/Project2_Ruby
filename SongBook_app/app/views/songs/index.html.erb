@@ -1,7 +1,8 @@
 <h1>SongBook Library</h1>
 
 <table class="table table-hover table table-bordered">
-	<% @songs.each do |song| %>
+	
+	<%#= song.inspect %>
 	<%# raise song.inspect %>
 		<tr>
 			<th>Song Name</th>
@@ -10,9 +11,10 @@
 			<th>Song URL</th>
 			<th>Song ID</th>
 		</tr>
+		<% @songs.each do |song| %>
 		<tr>
-			<td><%= link_to song.name , songs_path(song) %></td> 
-			<td><%= link_to song.writer , user_path(song) %></td> 
+			<td><%= link_to song.name, song_path(song) %></td> 
+			<td><%= link_to song.writer, user_path(song.user) %></td> 
 			<td><%= song.genre %></td>
 			<td> <%=song.file %></td>
 			<td><%= song.id %></td>

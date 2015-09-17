@@ -5,8 +5,9 @@
 
 <h2>Your Song List</h2>
 <table class="table table-hover table table-bordered">
-	<% @user.songs.each do |song| %>
+	
 	<%# raise song.inspect %>
+	<%#= song.inspect %>
 		<tr>
 			<th>Song Name</th>
 			<th>Songwriter</th>
@@ -16,6 +17,8 @@
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
+
+		<% @user.songs.each do |song| %>
 		<tr>
 			<td><%= link_to song.name, song_path(song) %></td>
 			<td><%= link_to song.writer, user_path(song.user_id) %></td>  
@@ -52,14 +55,16 @@
 
 		<div>
 			<%= f.label :genre %>
-			<select>
+			<%= f.text_field :genre %>
+
+			<!-- <select>
 	  			<option value="rock">Rock</option>
 	  			<option value="pop">Pop</option>
 	  			<option value="r&amp;b">R&amp;B</option>
 	  			<option value="edm">EDM</option>
 	  			<option value="edm">Country</option>
 	  			<option value="edm">Jazz</option>
-			</select>
+			</select> -->
 		</div>
 
 		<div>
