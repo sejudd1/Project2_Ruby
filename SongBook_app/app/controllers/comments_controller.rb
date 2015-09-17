@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 	end
 
 	def count
-		@post = Post.find(params[:post_id])
+		@song = Song.find(params[:song_id])
 		@comment = @post.comments.count(params[:comment])
 	end
 
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.require(:comment).permit(:user_id, :body, :text)
+		params.require(:comment).permit(:user_id, :body, :created_at)
 	end
 
 

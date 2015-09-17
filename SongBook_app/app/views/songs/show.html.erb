@@ -16,24 +16,48 @@
 
 </ul>
 
-<h2> Feedback </h2><h6>Comments: <%= @song.comments.count %></h6>
+<h2> Feedback </h2>
+<h6>Comments: <%= @song.comments.count %></h6>
 	<% @song.comments.each do |comment| %>
-		<p>
-			Feedback:<%= comment.body %>, User:<%= comment.user_id %>
-		</p>
+		<table class="table table-hover table table-bordered">
+			<tr>
+				<th>
+					Feedback
+				</th>
+				<th>
+					User
+				</th>
+				<th>
+					Date Stamp
+				</th>
+				<th>
+					Delete
+				</th>
+
+			</tr>
+			<tr>
+				<td>
+					 <%= comment.body %>
+				</td> 
+				<td>	
+					 <%= comment.user_id %>
+				</td>
+				<td>
+					 <%= comment.created_at %>
+				</td>
+				<td><%= link_to "Delete", user_comment_path(current_user , comment), method: :delete, data: { confirm: "Are you sure you want to delete your comment?"} %>
+				</td>
+			</tr>
+		</table>
 	<% end %>
 
 <h2> Add Your Feedback </h2>
 <%= form_for :comment, url: comments_path do |f| %>
   <input type="hidden" name="song_id" value="<%= @song.id %>" />
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
  
   <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
   </p>
  
   <p>
@@ -41,4 +65,4 @@
   </p>
 <% end %>
 
-<%= link_to "Back to the Library", songs_path %>
+<%= link_to "Back to the Library", songs_path, class: "mybtn" %>

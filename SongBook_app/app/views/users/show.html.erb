@@ -1,8 +1,7 @@
-<h1>Welcome To Your SongBook Profile, <%= @user.name %></h1>
+<h1>Welcome to your SongBook profile, <%= @user.name %></h1>
 
 
-<p>You have x amount of comments</p>
-<p>You have x amount of likes</p>
+<h4>Comments You've Made: <%= @user.comments.count %></h4>
 
 <h2>Your Song List</h2>
 <table class="table table-hover table table-bordered">
@@ -27,7 +26,7 @@
 				</audio>
 			</td>
 			<td> <%= song.id %> </td>  
-			<%#= "Number of comments" #post.comments.count %> 
+			
 			<td><%= link_to "Edit Song", edit_song_path(song) %></td>
 			<td><%= link_to "Delete Song", user_song_path(current_user , song), method: :delete, data: { confirm: "Are you sure you want to delete your song?"} %></td>
 
@@ -53,15 +52,6 @@
 
 		<div>
 			<%= f.label :genre %>
-			<!-- <br>
-			<form>
-			 	<input type="radio" name="genre" value="rock">Rock<br>
-                <input type="radio" name="genre" value="pop">Pop<br>
-                <input type="radio" name="genre" value="r&amp;b">R&amp;B<br>
-                <input type="radio" name="genre" value="edm">EDM<br>
-                <input type="radio" name="genre" value="country">County<br>
-                <input type="radio" name="genre" value="jazz">Jazz
-            </form> -->
 			<select>
 	  			<option value="rock">Rock</option>
 	  			<option value="pop">Pop</option>
@@ -85,7 +75,8 @@
 
 </div>
 
-<%= link_to "Back to the Library", songs_path %>
-<!-- user_songs_path(:user_id) -->
+<%= link_to "Back to the Library", songs_path , class: "mybtn" %>
+
+
 
 

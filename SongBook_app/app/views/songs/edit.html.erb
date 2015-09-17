@@ -15,13 +15,6 @@
     <div>
         <%= f.label :genre %>
             <select>
-                <!-- <form action="">
-                <input type="radio" name="genre" value="rock">Rock<br>
-                <input type="radio" name="genre" value="pop">Pop<br>
-                <input type="radio" name="genre" value="r&amp;b">R&amp;B<br>
-                <input type="radio" name="genre" value="edm">EDM<br>
-                <input type="radio" name="genre" value="country">County<br>
-                <input type="radio" name="genre" value="jazz">Jazz -->
                 <option value="rock">Rock</option>
                 <option value="pop">Pop</option>
                 <option value="r&amp;b">R&amp;B</option>
@@ -40,4 +33,4 @@
 
 <% end %>
 
-<%= link_to "Back to Library", songs_path %>
+<%= link_to "Back to Library", songs_path , class: "mybtn" %>

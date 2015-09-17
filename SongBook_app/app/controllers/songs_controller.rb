@@ -32,7 +32,6 @@ class SongsController < ApplicationController
 	def update
 		@song = Song.find(params[:id])
 		if @song.update_attributes(song_params)
-			# .require(:song).permit(:name, :writer, :genre, :file))
 			redirect_to songs_path
 		else
 			render :edit
