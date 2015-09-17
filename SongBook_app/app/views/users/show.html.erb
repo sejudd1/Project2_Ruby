@@ -5,7 +5,7 @@
 <p>You have x amount of likes</p>
 
 <h2>Your Song List</h2>
-<table>
+<table class="table table-hover table table-bordered">
 	<% @user.songs.each do |song| %>
 	<%# raise song.inspect %>
 		<tr>
@@ -13,6 +13,7 @@
 			<th>Songwriter</th>
 			<th>Genre</th>
 			<th>Song URL</th>
+			<th>Song ID</th>
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
@@ -24,7 +25,8 @@
 				<audio src>
 					<%= song.file %>
 				</audio>
-			</td>  
+			</td>
+			<td> <%= song.id %> </td>  
 			<%#= "Number of comments" #post.comments.count %> 
 			<td><%= link_to "Edit Song", edit_song_path(song) %></td>
 			<td><%= link_to "Delete Song", user_song_path(current_user , song), method: :delete, data: { confirm: "Are you sure you want to delete your song?"} %></td>

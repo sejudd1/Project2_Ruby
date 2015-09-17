@@ -1,6 +1,6 @@
 <h1>SongBook Library</h1>
 
-<table>
+<table class="table table-hover table table-bordered">
 	<% @songs.each do |song| %>
 	<%# raise song.inspect %>
 		<tr>
@@ -8,12 +8,14 @@
 			<th>Songwriter</th>
 			<th>Genre</th>
 			<th>Song URL</th>
+			<th>Song ID</th>
 		</tr>
 		<tr>
 			<td><%= link_to song.name , songs_path(song) %></tc> 
 			<td><%= link_to song.writer , user_path(song) %></td> 
 			<td><%= song.genre %></td>
-			<td> <%=song.file %></td> 
+			<td> <%=song.file %></td>
+			<td><%= song.id %></td>
 			<!-- <td><%#= post.comments.count %></td> -->
 		</tr>
 

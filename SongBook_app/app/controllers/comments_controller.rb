@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
 	def create
-		@user = User.find(params[:song_id])
+		@user = User.find( current_user.id )
 		@song = Song.find(params[:song_id])
 		@comment = @song.comments.create(comment_params)
 		@comment.user_id = current_user.id
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.require(:comment).permit(:user_id, :body)
+		params.require(:comment).permit(:user_id, :body, :text)
 	end
 
 
