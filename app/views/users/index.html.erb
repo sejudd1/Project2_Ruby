@@ -8,6 +8,9 @@
 		<th>
 			Profile
 		</th>
+		<th>
+			Contact
+		</th>
 	</tr>
 	<% @users.each do |user| %>
 	<tr>
@@ -16,6 +19,9 @@
 		</td>
 		<td>
 			<%= link_to " View", user_path( user.id ) %>
+		</td>
+		<td>
+			<%= mail_to " Contact", user.email, class: "glyphicon glyphicon-envelope" %>
 		</td>
 	</tr>
 

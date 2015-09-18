@@ -18,7 +18,11 @@ class CommentsController < ApplicationController
 	end
 
 	def destroy
+		# @comment = Comment.find(params[:id])
+		# @comment.destroy
+		# redirect_to songs_path
 		@comment = Comment.find(params[:id])
+		@comment.comments.destroy_all
 		@comment.destroy
 		redirect_to songs_path
 	end
