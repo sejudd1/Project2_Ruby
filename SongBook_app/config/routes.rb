@@ -28,6 +28,10 @@ Rails.application.routes.draw do
   put "users/:user_id/songs/:song_id/comments/:id" => "comments#update"
   delete "users/:user_id/comments" => "comments#destroy"
  
+  #match "songs/upload", :as => "upload"
+  #match "songs/delete", :as => "delete"
+ 
+  root :to => "songs#index"
 
   # delete "/comments" => "comments#destroy"
 

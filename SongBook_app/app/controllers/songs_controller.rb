@@ -2,6 +2,7 @@ class SongsController < ApplicationController
 	include SessionsHelper
 	def index
 		@songs = Song.all
+		
 	end
 
 	def new
@@ -20,8 +21,10 @@ class SongsController < ApplicationController
 	end
 
 	def create
+		file = song_params[:file]
 		@user = User.find(params[:user_id])
-		@song = @user.songs.new(params.require(:song).permit(:name, :writer, :genre, :file))
+		@song = @user.songs.new(song_params)
+		@song.file = file.to_s
 		if @song.save
     		redirect_to songs_path
   		else
@@ -53,7 +56,7 @@ class SongsController < ApplicationController
 	private
 
 	def song_params
-		params.require(:song).permit(:name, :writer, :genre, :file)
+		params.require(:song).permit(:name, :writer, :genre, :file, :track_file_name, :track_content_type)
 	end
 
 

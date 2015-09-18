@@ -2,13 +2,13 @@
 
 <ul>
 	<li>
-		<%= @song.writer %><%= link_to " View Profile", user_path %>
+		<%= @song.writer %><%= link_to " View Profile", user_path( @song.user_id ) %>
 	</li>
 	<li>
 		Genre: <%= @song.genre %> 
 	</li>
 	<li>
-		Listen: <%= @song.file %>
+		Track: <%= @song.track %>
 	</li>
 	<li>
 		Likes: <%= @song.like %>
@@ -45,7 +45,7 @@
 				<td>
 					 <%= comment.created_at %>
 				</td>
-				<td><%#= link_to "Delete", [comment.song, comment], method: :delete, data: { confirm: "Are you sure you want to delete your comment?"} %>
+				<td><span class="glyphicon glyphicon-trash"></span><%#= link_to "Delete", [comment.song, comment], method: :delete, data: { confirm: "Are you sure you want to delete your comment?"} %>
 				</td>
 			</tr>
 		</table>

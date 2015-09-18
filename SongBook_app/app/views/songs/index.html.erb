@@ -8,7 +8,7 @@
 			<th>Song Name</th>
 			<th>Songwriter</th>
 			<th>Genre</th>
-			<th>Song URL</th>
+			<th>Track</th>
 			<th>Song ID</th>
 		</tr>
 		<% @songs.each do |song| %>
@@ -16,7 +16,7 @@
 			<td><%= link_to song.name, song_path(song) %></td> 
 			<td><%= link_to song.writer, user_path(song.user) %></td> 
 			<td><%= song.genre %></td>
-			<td> <%=song.file %></td>
+			<td><audio controls><source src="<%= song.file.to_s.gsub! '"', '' %>" type="audio/mpeg"></audio></td>
 			<td><%= song.id %></td>
 			<!-- <td><%#= post.comments.count %></td> -->
 		</tr>
