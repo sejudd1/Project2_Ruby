@@ -1,7 +1,18 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
+
+This README is for SongBook Networking Hub.
+
+Here are the steps are necessary to get the
 application up and running.
+
+Ruby version 2.2.0
+
+Ruby on Rails database
+
+Deployed via Heroku
+
+
 
 Things you may want to cover:
 
