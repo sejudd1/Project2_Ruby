@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   #match "songs/upload", :as => "upload"
   #match "songs/delete", :as => "delete"
  
-  root :to => "songs#index"
+  # root :to => "songs#index"
 
   # delete "/comments" => "comments#destroy"
 
@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'sessions#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
