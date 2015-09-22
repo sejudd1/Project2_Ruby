@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+	#before action :authenticate
 	include SessionsHelper
+
 	def index
 		@users = User.all
 	end

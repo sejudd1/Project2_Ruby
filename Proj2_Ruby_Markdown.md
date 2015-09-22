@@ -47,15 +47,15 @@
 *Comment has many Likes
 
 
-####Site Design (rough draft)
+####Site Design (screen shots)
 *Main Page
-![](images/Main.jpg)
+![](images/SongBook%20Home%20Page.png)
 
-*Songwriter Page
-![](images/Songwriter.jpg)
+*User Profile Page
+![](images/SongBook%20Profile%20.png)
 
-*Songs Page
-![](images/Songs.jpg)
+*SongBook Users Index Page
+![](images/SongBook%20Users.png)
 
-*Genre Page
-![](images/Genre.jpg)
+*LogIn Page
+![](images/SongBook%20LogIn.png)
