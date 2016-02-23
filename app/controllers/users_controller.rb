@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	#before action :authenticate
+	#before_action :authenticate
 	include SessionsHelper
 
 	def index

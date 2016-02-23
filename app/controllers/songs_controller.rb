@@ -1,6 +1,6 @@
-class SongsController < ApplicationController
+  class SongsController < ApplicationController
 	include SessionsHelper
-	
+	before_action :authenticate
 	#validates_attachment_content_type :song, content_type => ["audio/mpeg"]
 
 	def index

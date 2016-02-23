@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
 			#turning user_id into a string because cookies can only store strings
 		else
 			#something's wrong please try again?
+			flash[:danger] = "Invalid email/password, please try again."
 			render :new
 
 		end
