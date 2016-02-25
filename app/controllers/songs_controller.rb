@@ -24,7 +24,7 @@
 	end
 
 	def create
-		file = song_params[:file]
+		file = song_params[:track]
 		@user = User.find(params[:user_id])
 		@song = @user.songs.new(song_params)
 		@song.file = file.to_s
@@ -59,7 +59,7 @@
 	private
 
 	def song_params
-		params.require(:song).permit(:name, :writer, :genre, :file, :track_file_name, :track_content_type)
+		params.require(:song).permit(:name, :writer, :genre, :track)
 	end
 
 
